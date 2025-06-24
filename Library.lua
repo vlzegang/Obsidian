@@ -363,8 +363,14 @@ local function GetPlayers(ExcludeLocalPlayer: boolean?)
         return Player1.Name:lower() < Player2.Name:lower()
     end)
 
-    return PlayerList
+    local DisplayNames = {}
+    for _, player in ipairs(PlayerList) do
+        table.insert(DisplayNames, player.DisplayName)
+    end
+
+    return DisplayNames
 end
+
 local function GetTeams()
     local TeamList = Teams:GetTeams()
 
