@@ -360,7 +360,7 @@ local function GetPlayers(ExcludeLocalPlayer: boolean?)
     end
 
     table.sort(PlayerList, function(Player1, Player2)
-        return Player1.Name:lower() < Player2.Name:lower()
+        return Player1.DisplayName:lower() < Player2.DisplayName:lower()
     end)
 
     return PlayerList
@@ -369,7 +369,7 @@ local function GetTeams()
     local TeamList = Teams:GetTeams()
 
     table.sort(TeamList, function(Team1, Team2)
-        return Team1.Name:lower() < Team2.Name:lower()
+        return Team1.DisplayName:lower() < Team2.DisplayName:lower()
     end)
 
     return TeamList
